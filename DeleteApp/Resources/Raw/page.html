@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <script>
+        function sendDataToCSharp() {
+            var inputData = document.getElementById('userInput').value;
+            // تغيير موقع النافذة مع إضافة المعاملات
+            window.location.href = `/someRandomPageDoesntMatter?registrationId=${inputData}`;
+        }
+    </script>
+</head>
+<body>
+    <h1 id="welcome">Welcome</h1>
+    <input type="text" id="userInput" placeholder="Enter your name" />
+    <button onclick="sendDataToCSharp()">Send to C#</button>
+</body>
+</html>

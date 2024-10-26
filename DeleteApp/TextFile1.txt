@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeleteApp.MainPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             >
+    
+        <toolkit:SemanticOrderView x:Name="SemanticOrderView">
+            <Grid
+        RowDefinitions="auto,*"
+        >
+
+                <Grid
+            RowDefinitions="*,*"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="10">
+
+                    <Button 
+                x:Name="btn1" 
+                Text="عناصر 1" 
+                Clicked="btn1_Clicked" />
+
+                    <Button 
+                Grid.Column="1"
+                x:Name="btn2" 
+                Text="عناصر 2" 
+                Clicked="btn2_Clicked" />
+                </Grid>
+
+                <!-- منطقة القوائم -->
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="10">
+                    <CollectionView
+                x:Name="cv1"
+                >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" FontSize="Title" BackgroundColor="DarkRed" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <CollectionView
+                Grid.Column="1"
+                x:Name="cv2"
+                >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" FontSize="Title" BackgroundColor="DarkRed" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+
+                <CollectionView
+            Grid.Row="1"
+            x:Name="cv3">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}" FontSize="Title" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </toolkit:SemanticOrderView>
+    
+</ContentPage>

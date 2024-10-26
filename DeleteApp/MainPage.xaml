@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeleteApp.MainPage"
+             >
+
+    <Grid
+        RowDefinitions="*,auto"
+        >
+
+        <CollectionView
+x:Name="cv3">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding .}" FontSize="Title" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid
+            RowDefinitions="auto"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="10">
+            <VerticalStackLayout>
+                <Button 
+                x:Name="btn1" 
+                Text="عناصر 1" 
+                Clicked="btn1_Clicked"
+                />
+
+                <CollectionView
+    x:Name="cv1"
+                    IsVisible="False"
+    >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}" FontSize="Title" BackgroundColor="DarkRed" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1">
+                <Button 
+                Grid.Column="1"
+                x:Name="btn2" 
+                Text="عناصر 2" 
+                Clicked="btn2_Clicked"
+                />
+
+                <CollectionView
+    x:Name="cv2"
+                    IsVisible="False"
+    >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding .}" FontSize="Title" BackgroundColor="DarkRed" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+            
+        </Grid>
+
+        <Button Grid.Row="1" x:Name="btnGO" Text="Go To" Clicked="btnGO_Clicked" />
+    </Grid>
+
+</ContentPage>
